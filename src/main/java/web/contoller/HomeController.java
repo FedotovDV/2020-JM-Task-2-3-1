@@ -2,7 +2,11 @@ package web.contoller;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class HomeController {
@@ -14,12 +18,17 @@ public class HomeController {
 //5. Внесите изменения в конфигурацию для работы с базой данных. Вместо SessionFactory должен использоваться EntityManager.
 
     @GetMapping(value = "/")
-    public String getIndex(){
+    public String getIndex() {
         return "index";
     }
 
-    @GetMapping(value ="/welcome")
-    public String getWelcome(){
+    @GetMapping(value = "/welcome")
+    public String getWelcome(ModelMap model) {
+        List<String> messages = new ArrayList<>();
+        messages.add("Hello!");
+        messages.add("I'm Spring MVC application");
+        messages.add("5.2.7 version by jul'20 ");
+        model.addAttribute("messages", messages);
         return "welcome";
     }
 }

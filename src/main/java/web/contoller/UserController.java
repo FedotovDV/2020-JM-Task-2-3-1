@@ -8,20 +8,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 import web.model.User;
 import web.service.UserService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class UserController {
 
-    @Autowired
+
     private UserService userService;
 
-    @GetMapping(value ="/users")
-    public String getUser(ModelMap model){
-        List<User> users = userService.allUsers();
+    @Autowired
+    public void setService(UserService userService) {
+        this.userService = userService;
+    }
+
+    @GetMapping(value = "/users")
+    public String getUser(ModelMap model) {
+        List<User> users = userService.getUsers();
+
         model.addAttribute("users", users);
         model.addAttribute("title", "Users");
-        return "users";
+
+         return "users";
     }
 
 }

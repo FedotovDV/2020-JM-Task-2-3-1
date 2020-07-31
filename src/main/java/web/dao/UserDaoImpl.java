@@ -41,7 +41,7 @@ public class UserDaoImpl  implements UserDao {
 
     @Override
     @SuppressWarnings("unchecked")
-    public List<User> allUsers() {
+    public List<User> getUsers() {
         return entityManager.createQuery("select U from User U").getResultList();
 //        System.out.println("ORMService queryfindAllUsersJPA is called");
 //        String query = "select U from User U";
