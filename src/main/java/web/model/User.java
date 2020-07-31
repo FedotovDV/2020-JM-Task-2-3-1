@@ -25,11 +25,11 @@ public class User {
 
     }
 
-    public User(String name, String lastName, String email) {
-        this.name = name;
-        this.lastName = lastName;
-        this.email = email;
-    }
+//    public User(String name, String lastName, String email) {
+//        this.name = name;
+//        this.lastName = lastName;
+//        this.email = email;
+//    }
 
 
 
