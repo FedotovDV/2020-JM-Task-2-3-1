@@ -40,7 +40,7 @@ public class WebConfig implements WebMvcConfigurer {
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setCharacterEncoding("UTF-8");
         templateResolver.setPrefix("/WEB-INF/pages/");
-        templateResolver.setSuffix(".jsp");
+        templateResolver.setSuffix(".html");
         return templateResolver;
     }
 
