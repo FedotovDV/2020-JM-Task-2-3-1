@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
@@ -20,7 +20,6 @@ public class UserServiceImpl implements UserService{
     }
 
 
-    @Transactional
     @Override
     public List<User> getUsers() {
         return userDao.getUsers();
@@ -34,12 +33,11 @@ public class UserServiceImpl implements UserService{
     }
 
 
-    @Transactional
     @Override
-    public void deleteUser(User user) {
-        userDao.deleteUser(user);
+    @Transactional
+    public void deleteUser(Long id) {
+        userDao.deleteUser(id);
     }
-
 
     @Override
     @Transactional
@@ -48,7 +46,6 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    @Transactional
     public User getUserById(Long id) {
         return userDao.getUserById(id);
     }
